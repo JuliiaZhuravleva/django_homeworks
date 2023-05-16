@@ -16,15 +16,19 @@ DATA = {
         'сыр, ломтик': 1,
         'помидор, ломтик': 1,
     },
-    # можете добавить свои рецепты ;)
+    'salad': {
+        'помидор, шт': 2,
+        'огурц, шт': 2,
+        'укроп, г': 10,
+        'масло, г': 10,
+        'соль, г': 1
+    }
 }
 
-# Напишите ваш обработчик. Используйте DATA как источник данных
-# Результат - render(request, 'calculator/index.html', context)
-# В качестве контекста должен быть передан словарь с рецептом:
-# context = {
-#   'recipe': {
-#     'ингредиент1': количество1,
-#     'ингредиент2': количество2,
-#   }
-# }
+
+def ingredients(request, dish):
+    servings_count = int(request.GET.get('servings', 1))
+    context = {'recipe': {}}
+    for ingredient, count in DATA[dish].items():
+        context['recipe'][ingredient] = count * servings_count
+    return render(request, 'calculator/index.html', context)

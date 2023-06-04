@@ -11,6 +11,9 @@ __pycache__/
 env/
 venv/
 .venv/
+venvp/
+
+uploads/
 
 ### Project specific ###
 settings_local.py

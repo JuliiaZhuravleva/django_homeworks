@@ -18,6 +18,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'thn+&t-%s0=7!zo_d1ovp*(b%p&$0uoxp&7b$xeukov_i-oe5#'
 
+# Set default auto field for models
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -57,6 +60,8 @@ DATABASES = {
         'NAME': 'netology_models_list',
         'HOST': '127.0.0.1',
         'PORT': '5432',
+        'USER': 'postgres',
+        'PASSWORD': os.environ.get('DB_PASSWORD')
     }
 }
 

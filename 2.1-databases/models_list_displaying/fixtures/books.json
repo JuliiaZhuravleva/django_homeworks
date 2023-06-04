@@ -16,5 +16,167 @@
       "author": "Джордж Оруэл",
       "pub_date": "2016-12-06"
     }
+  },
+  {
+    "model": "books.book",
+    "pk": 3,
+    "fields": {
+      "name": "Преступление и наказание",
+      "author": "Ф.М. Достоевский",
+      "pub_date": "2015-08-14"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 4,
+    "fields": {
+      "name": "Горе от ума",
+      "author": "А.С. Грибоедов",
+      "pub_date": "2019-05-02"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 5,
+    "fields": {
+      "name": "Мастер и Маргарита",
+      "author": "М.А. Булгаков",
+      "pub_date": "2017-11-21"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 6,
+    "fields": {
+      "name": "Улисс",
+      "author": "Джеймс Джойс",
+      "pub_date": "2017-11-21"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 7,
+    "fields": {
+      "name": "Тихий Дон",
+      "author": "М.А. Шолохов",
+      "pub_date": "2020-09-08"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 8,
+    "fields": {
+      "name": "Великий Гэтсби",
+      "author": "Фрэнсис Скотт Фицджеральд",
+      "pub_date": "2020-09-08"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 9,
+    "fields": {
+      "name": "Моби Дик",
+      "author": "Герман Мелвилл",
+      "pub_date": "2020-09-08"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 10,
+    "fields": {
+      "name": "Анна Каренина",
+      "author": "Лев Толстой",
+      "pub_date": "2019-01-23"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 11,
+    "fields": {
+      "name": "Сто лет одиночества",
+      "author": "Габриэль Гарсия Маркес",
+      "pub_date": "2018-06-07"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 12,
+    "fields": {
+      "name": "Властелин колец",
+      "author": "Дж.Р.Р. Толкин",
+      "pub_date": "2019-05-02"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 13,
+    "fields": {
+      "name": "Гарри Поттер и философский камень",
+      "author": "Джоан Роулинг",
+      "pub_date": "2020-09-08"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 14,
+    "fields": {
+      "name": "Над пропастью во ржи",
+      "author": "Джером Д. Сэлинджер",
+      "pub_date": "2016-08-15"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 15,
+    "fields": {
+      "name": "Алиса в стране чудес",
+      "author": "Льюис Кэрролл",
+      "pub_date": "2019-05-02"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 16,
+    "fields": {
+      "name": "Великий Гэтсби",
+      "author": "Фрэнсис Скотт Фицджеральд",
+      "pub_date": "2020-09-08"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 17,
+    "fields": {
+      "name": "Гордость и предубеждение",
+      "author": "Джейн Остин",
+      "pub_date": "2017-05-01"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 18,
+    "fields": {
+      "name": "451 градус по Фаренгейту",
+      "author": "Рэй Брэдбери",
+      "pub_date": "2018-11-16"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 19,
+    "fields": {
+      "name": "Убить пересмешника",
+      "author": "Харпер Ли",
+      "pub_date": "2015-07-23"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 20,
+    "fields": {
+      "name": "Винни-Пух",
+      "author": "Алан Милн",
+      "pub_date": "2020-09-08"
+    }
   }
 ]

@@ -12,9 +12,18 @@
             <div class="book col-md-4">
                 <h2> {{ book.name }} </h2>
                 <p>Автор:  {{ book.author }} </p>
-                <p>Дата публикации:  <a class="publication-date" href={{book.pub_date}}> {{ book.pub_date }} </a></p>
+                <p>Дата публикации:  {{ book.pub_date }} </p>
             </div>
             {% endfor %}
+        </div>
+        <div>
+            {% if nearest_dates.prev_date %}
+            <a class="publication-date" href=/books/{{nearest_dates.prev_date}}> <<{{ nearest_dates.prev_date }} </a>
+            {% endif %}
+            &emsp;
+            {% if nearest_dates.next_date %}
+            <a class="publication-date" href=/books/{{nearest_dates.next_date}}> {{ nearest_dates.next_date }} >> </a>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

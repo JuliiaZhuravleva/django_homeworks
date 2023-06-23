@@ -65,7 +65,7 @@ from django.forms import BaseInlineFormSet
 from .models import Object, Relationship
 
 
-class RelationshipInlineFormset(BaseInlineFormSet):
+class ScopeInlineFormset(BaseInlineFormSet):
     def clean(self):
         for form in self.forms:
             # В form.cleaned_data будет словарь с данными
@@ -80,7 +80,7 @@ class RelationshipInlineFormset(BaseInlineFormSet):
 
 class RelationshipInline(admin.TabularInline):
     model = Relationship
-    formset = RelationshipInlineFormset
+    formset = ScopeInlineFormset
 
 
 @admin.register(Object)

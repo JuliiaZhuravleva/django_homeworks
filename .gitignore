@@ -12,6 +12,7 @@ env/
 venv/
 .venv/
 venvp/
+.env
 
 uploads/
 

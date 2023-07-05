@@ -7,8 +7,8 @@ POST {{baseUrl}}/products/
 Content-Type: application/json
 
 {
-  "title": "Помидор",
-  "description": "Лучшие помидоры на рынке"
+  "title": "Лук",
+  "description": "Пряный"
 }
 
 ###
@@ -36,8 +36,18 @@ Content-Type: application/json
 ###
 
 # поиск продуктов по названию и описанию
-GET {{baseUrl}}/products/?search=помидор
+GET {{baseUrl}}/products/?search=и
 Content-Type: application/json
+
+###
+
+# просмотр складов
+GET {{baseUrl}}/stocks/
+
+###
+
+# удаление складов
+DELETE {{baseUrl}}/stocks/5/
 
 ###
 
@@ -64,19 +74,19 @@ Content-Type: application/json
 ###
 
 # обновляем записи на складе
-PATCH {{baseUrl}}/stocks/4/
+PATCH {{baseUrl}}/stocks/6/
 Content-Type: application/json
 
 {
   "positions": [
     {
       "product": 2,
-      "quantity": 100,
+      "quantity": 101,
       "price": 130.80
     },
     {
       "product": 3,
-      "quantity": 243,
+      "quantity": 244,
       "price": 145
     }
   ]
@@ -85,5 +95,38 @@ Content-Type: application/json
 ###
 
 # поиск складов, где есть определенный продукт
-GET {{baseUrl}}/stocks/?products=2
+GET {{baseUrl}}/stocks/?search=огур
 Content-Type: application/json
+
+###
+
+# поиск складов по названию продукта
+GET {{baseUrl}}/stocks/?products=3&page=1
+Content-Type: application/json
+
+###
+
+# создание еще одного склада (без продукта 2)
+POST {{baseUrl}}/stocks/
+Content-Type: application/json
+
+{
+  "address": "г. Москва, просп. Мира, 20",
+  "positions": [
+    {
+      "product": 3,
+      "quantity": 100,
+      "price": 180
+    },
+    {
+      "product": 4,
+      "quantity": 101,
+      "price": 181
+    },
+    {
+      "product": 5,
+      "quantity": 102,
+      "price": 182
+    }
+  ]
+}

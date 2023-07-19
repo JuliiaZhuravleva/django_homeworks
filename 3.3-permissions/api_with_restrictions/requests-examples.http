@@ -1,42 +1,94 @@
 # примеры API-запросов
 
-@baseUrl = https://localhost:8000/api
+@baseUrl = http://localhost:8000/api
 
 # получение объявлений
 GET {{baseUrl}}/advertisements/
 Content-Type: application/json
+Authorization: Token ab28d2e4776405530173d0a358f4d8c74ef469b1	
+
+###
+
+# получение объявления
+GET {{baseUrl}}/advertisements/27/
+Content-Type: application/json
+Authorization: Token e56539619769f5e0ef985c3447efa822ac917084	
 
 ###
 
 # создание объявления
 POST {{baseUrl}}/advertisements/
 Content-Type: application/json
-Authorization: Token 902ef055a9ac93f18327f1f9c45ab059f1a62c7d
+Authorization: Token e56539619769f5e0ef985c3447efa822ac917084	
 
 {
-  "title": "Шкаф IKEA",
+  "title": "Лампа IKEA",
   "description": "Срочно"
 }
 
 ###
 
 # попытка поменять объявление
-PATCH {{baseUrl}}/advertisements/1/
+PATCH {{baseUrl}}/advertisements/3/
 Content-Type: application/json
-Authorization: Token 902ef055a9ac93f18327f1f9c45ab059f1a62c7d
+Authorization: Token e56539619769f5e0ef985c3447efa822ac917084	
 
 {
   "status": "CLOSED"
 }
 
+
+###
+
+# попытка удалить объявление
+DELETE {{baseUrl}}/advertisements/4/
+Authorization: Token ab28d2e4776405530173d0a358f4d8c74ef469b1	
+
 ###
 
 # фильтрация по создателю
-GET {{baseUrl}}/advertisements/?creator=3
+GET {{baseUrl}}/advertisements/?creator=35
 Content-Type: application/json
 
 ###
 
 # фильтрация по дате
-GET {{baseUrl}}/advertisements/?created_at_before=2020-10-01
+GET {{baseUrl}}/advertisements/?created_at_before=2023-07-17
 Content-Type: application/json
+
+
+###
+
+# фильтрация по дате 2
+GET {{baseUrl}}/advertisements/?created_at_after=2023-07-18
+Content-Type: application/json
+
+###
+
+# фильтрация по заголовку
+GET {{baseUrl}}/advertisements/?title=Шкаф
+Content-Type: application/json
+
+###
+
+# фильтрация по статусу
+GET {{baseUrl}}/advertisements/?status=CLOSED
+Content-Type: application/json
+
+###
+
+# добавить в избранное
+POST {{baseUrl}}/advertisements/26/favourite/
+Authorization: Token e56539619769f5e0ef985c3447efa822ac917084
+
+###
+
+# удалить из избранного
+DELETE {{baseUrl}}/advertisements/13/favourite/
+Authorization: Token e56539619769f5e0ef985c3447efa822ac917084
+
+###
+
+# просмотреть избранное
+GET {{baseUrl}}/advertisements/?favourite=true
+Authorization: Token e56539619769f5e0ef985c3447efa822ac917084

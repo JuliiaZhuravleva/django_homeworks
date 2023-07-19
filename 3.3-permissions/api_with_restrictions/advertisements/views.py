@@ -18,9 +18,12 @@ class AdvertisementViewSet(ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user
-        return Advertisement.objects.filter(Q(status=AdvertisementStatusChoices.OPEN) |
-                                            Q(status=AdvertisementStatusChoices.CLOSED, creator=user) |
-                                            Q(status=AdvertisementStatusChoices.DRAFT, creator=user))
+        if user.is_authenticated:
+            return Advertisement.objects.filter(Q(status=AdvertisementStatusChoices.OPEN) |
+                                                Q(status=AdvertisementStatusChoices.CLOSED, creator=user) |
+                                                Q(status=AdvertisementStatusChoices.DRAFT, creator=user))
+        else:
+            return Advertisement.objects.filter(Q(status=AdvertisementStatusChoices.OPEN))
 
     def get_permissions(self):
         """Получение прав для действий."""

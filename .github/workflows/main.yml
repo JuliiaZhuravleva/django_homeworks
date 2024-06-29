@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-    paths:
-      - '3.2-crud/stocks_products/**'
 
 jobs:
   tests:

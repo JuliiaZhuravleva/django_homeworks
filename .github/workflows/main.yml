@@ -9,20 +9,20 @@ on:
 
 jobs:
   tests:
-      runs-on: ubuntu-22.04
-      defaults:
-        run:
-          working-directory: 3.2-crud/stocks_products
-      env:
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        DEBUG:  ${{ secrets.DEBUG }}
-        ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
-        DB_ENGINE: ${{ secrets.DB_ENGINE }}
-        DB_NAME: ${{ secrets.DB_NAME }}
-        DB_USER: ${{ secrets.DB_USER }}
-        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-        DB_HOST: ${{ secrets.DB_HOST }}
-        DB_P0RT:  ${{ secrets.DB_PORT }}
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: 3.2-crud/stocks_products
+    env:
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      DEBUG:  ${{ secrets.DEBUG }}
+      ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
+      DB_ENGINE: ${{ secrets.DB_ENGINE }}
+      DB_NAME: ${{ secrets.DB_NAME }}
+      DB_USER: ${{ secrets.DB_USER }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DB_HOST: ${{ secrets.DB_HOST }}
+      DB_PORT:  ${{ secrets.DB_PORT }}
     services:
       db_main:
         image: postgres:12

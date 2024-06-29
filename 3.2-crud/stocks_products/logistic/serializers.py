@@ -1,4 +1,4 @@
-from abc import ABC
+# from abc import ABC
 
 from rest_framework import serializers
 
@@ -41,15 +41,17 @@ class StockSerializer(serializers.ModelSerializer):
         instance.save()
 
         # обновляем склад по его параметрам
-        stock = super().update(instance, validated_data)
+        # stock = super().update(instance, validated_data)
 
         for position in positions:
             product = position.get('product')
             stock_product = instance.positions.filter(product=product).first()
 
             if stock_product:
-                stock_product.quantity = position.get('quantity', stock_product.quantity)
-                stock_product.price = position.get('price', stock_product.price)
+                stock_product.quantity = \
+                    position.get('quantity', stock_product.quantity)
+                stock_product.price = \
+                    position.get('price', stock_product.price)
                 stock_product.save()
             else:
                 StockProduct.objects.create(stock=instance, **position)

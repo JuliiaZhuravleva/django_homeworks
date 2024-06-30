@@ -78,5 +78,5 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
-          key: /tmp/ssh_key
+          key_path: /tmp/ssh_key
           script:  ${{ secrets.SSH_COMMAND }}

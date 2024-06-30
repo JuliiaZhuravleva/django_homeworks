@@ -79,4 +79,5 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key_path: /tmp/ssh_key
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script:  ${{ secrets.SSH_COMMAND }}

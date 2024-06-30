@@ -24,5 +24,5 @@ class StockViewSet(ModelViewSet):
 
 
 def test_view(request):
-    data = {"message": "test"}
+    data = {"message": "test updated"}
     return JsonResponse(data)

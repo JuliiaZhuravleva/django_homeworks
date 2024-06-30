@@ -5,6 +5,8 @@ from rest_framework.viewsets import ModelViewSet
 from logistic.models import Product, Stock
 from logistic.serializers import ProductSerializer, StockSerializer
 
+from django.http import JsonResponse
+
 
 class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
@@ -19,3 +21,8 @@ class StockViewSet(ModelViewSet):
     filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ['products']
     search_fields = ['products__title']
+
+
+def test_view(request):
+    data = {"message": "test"}
+    return JsonResponse(data)

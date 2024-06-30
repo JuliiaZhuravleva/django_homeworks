@@ -39,6 +39,14 @@ jobs:
       - name: Проверка на наличие изменений
         uses: actions/checkout@v4
 
+      
+      - name: Decode SSH key
+        run: |
+          echo "$SSH_KEY_BASE64" | base64 -d > /tmp/ssh_key
+          chmod 600 /tmp/ssh_key
+        env:
+          SSH_KEY_BASE64: ${{ secrets.SSH_KEY_BASE64 }}
+
       - name: Установка Python
         uses: actions/setup-python@v4
         with:
@@ -64,13 +72,6 @@ jobs:
             DB_PASSWORD: ${{ env.DB_PASSWORD }}
             DB_HOST: ${{ env.DB_HOST }}
             DB_PORT: ${{ env.DB_PORT }}
-
-      - name: Decode SSH key
-        run: |
-          echo "$SSH_KEY_BASE64" | base64 -d > /tmp/ssh_key
-          chmod 600 /tmp/ssh_key
-        env:
-          SSH_KEY_BASE64: ${{ secrets.SSH_KEY_BASE64 }}
 
       - name: Деплой
         uses: appleboy/ssh-action@master

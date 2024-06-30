@@ -1,0 +1,10 @@
+#!/bin/bash/expect
+
+set password [lindex $argv 0]
+
+spawn /home/user/django_homeworks/3.2-crud/stocks_products/deploy.sh
+expect "yes"
+send -- "yes\r"
+expect "password"
+send -- "$password\r"
+expect eof

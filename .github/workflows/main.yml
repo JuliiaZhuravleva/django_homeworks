@@ -64,10 +64,18 @@ jobs:
             DB_PASSWORD: ${{ env.DB_PASSWORD }}
             DB_HOST: ${{ env.DB_HOST }}
             DB_PORT: ${{ env.DB_PORT }}
+            
+      - name: Decode SSH key
+        run: |
+          echo "$SSH_KEY_BASE64" | base64 -d > /tmp/ssh_key
+          chmod 600 /tmp/ssh_key
+        env:
+          SSH_KEY_BASE64: ${{ secrets.SSH_KEY }}
+
       - name: Деплой
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
+          key: /tmp/ssh_key
           script:  ${{ secrets.SSH_COMMAND }}

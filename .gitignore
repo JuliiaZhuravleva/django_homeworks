@@ -7,14 +7,32 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# SQLite database
 *.sqlite3
+
+# Virtual environments
 env/
 venv/
 .venv/
 venvp/
 .env
 
+# Uploads
 uploads/
+
+# Ignore Docker volumes
+docker_volumes/
+
+# Ignore Docker-compose override files which can be used to override
+# settings in docker-compose.yml
+docker-compose.override.yml
+
+# Ignore Docker logs and temp files
+**/*.log
+tmp/
+*.pid
+*.seed
+*.pid.lock
 
 ### Project specific ###
 settings_local.py

@@ -57,3 +57,19 @@ manage.py migrate
 ```bash
 python manage.py runserver
 ```
+
+# Django Docker container
+
+## Запуск контейнера
+
+1. Соберите образ:
+
+    ```sh
+    docker build -t my-django-app .
+    ```
+
+2. Запустите контейнер:
+
+    ```sh
+    docker run --env-file .env -p 8000:8000 my-django-app
+    ```

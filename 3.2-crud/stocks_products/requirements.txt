@@ -3,3 +3,4 @@ djangorestframework
 psycopg2-binary
 django_filter
 python-dotenv
+gunicorn==20.1.0
